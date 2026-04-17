@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    
+    <title>CADASTRO</title>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Minha Logo</div>
+    <nav>
+        <a href='/'>HOME</a>
+        <a href="#">PÁGINA 2</a>
+        <a href="#">PÁGINA 3</a>
+    </nav>
+</header>
+
+{% if erro %}
+<p class="erro">{{ erro }}</p>
+{% endif %}
+
+<form class="form" id="meuForm" action="/form{% if livro %}?id={{ livro.id }}{% endif %}" method="post">
+  
+  <label>Nome:</label>
+  <input name="nome" type="text" required value="{{ livro.nome if livro else '' }}">
+
+  <label>Autor:</label>
+  <input name="autor" type="text" required value="{{ livro.autor if livro else '' }}">
+
+  <label>Ano:</label>
+  <input name="ano" type="number" value="{{ livro.ano_publicacao if livro else '' }}">
+
+  <label>Editora:</label>
+  <input name="editora" type="text" value="{{ livro.editora if livro else '' }}">
+
+  <label>Gênero:</label>
+  <input name="genero" type="text" value="{{ livro.genero if livro else '' }}">
+
+  <label>ISBN:</label>
+  <input name="isbn" type="text" value="{{ livro.isbn if livro else '' }}">
+
+  <input type="submit" class="btn" value="{% if livro %}Atualizar{% else %}Cadastrar{% endif %}">
+</form>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

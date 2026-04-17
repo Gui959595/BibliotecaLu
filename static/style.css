@@ -1,0 +1,246 @@
+/* RESET */
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #a811ff9f, #6a00f4);
+    font-family: 'Avenir', sans-serif;
+}
+
+/* TÍTULO */
+h1 {
+    font-style: italic;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* HEADER */
+header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    border-bottom: 2px solid white;
+}
+
+/* CONTAINER DO FORM */
+.form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 15px 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* LABELS */
+.form label {
+    text-align: left;
+    font-weight: bold;
+    color: white;
+    align-self: center;
+    font-size: 26px;
+    margin-left:20px;
+}
+
+/* INPUTS */
+.form input[type="text"],
+.form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    font-size: 20px;
+
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* EFEITO FOCUS */
+.form input:focus {
+    box-shadow: 0 0 0 2px #a855f7;
+}
+
+/* BOTÃO */
+.form .btn {
+    grid-column: 1 / -1; /* ocupa toda largura */
+    margin-top: 15px;
+
+    background-color: #904caf;
+    color: white;
+    border: none;
+    padding: 12px;
+
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.form .btn:hover {
+    background-color: #7a3e94;
+    transform: scale(1.03);
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .form label {
+        text-align: left;
+    }
+}
+
+/*-----------------------------------
+/* TABELA  */
+.tabela {
+    width: calc(100% - 300px); /* deixa espaço para imagem */
+    margin: 30px 40px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabela thead {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.tabela th {
+    padding: 14px;
+    text-align: center;
+    color: white;
+}
+
+.tabela td {
+    padding: 12px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* LINHAS */
+.tabela tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tabela tbody tr:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transition: 0.3s;
+}
+
+/* AÇÕES */
+.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* BOTÕES */
+.btn-editar {
+    background-color: #4cafef;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-editar:hover {
+    background-color: #2e8cd6;
+}
+
+.btn-deletar {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-deletar:hover {
+    background-color: #cc0000;
+}
+
+/* IMAGEM (mantém fixa 👍) */
+.container {
+    position: fixed;
+    top: 100px;
+    right: 40px;
+}
+
+.card-img {
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.card-img:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .container {
+        display: none;
+    }
+
+    .tabela {
+        width: 90%; /* volta ao normal no mobile */
+        margin: 20px auto;
+    }
+
+    h1 {
+        margin-left: 20px;
+    }
+}
+
+/* FOOTER */
+.main-footer {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.erro {
+    color: #000000;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 40px;
+}
